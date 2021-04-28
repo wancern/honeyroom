@@ -12,10 +12,10 @@ class InfoPage extends StatefulWidget {
 }
 
 final List<String> imgList = [
-  'assets/images/sample_1.png',
-  'assets/images/sample_2.png',
-  'assets/images/sample_3.png',
-  'assets/images/sample_4.png'
+  'assets/images/sample_1.jpg',
+  'assets/images/sample_2.jpg',
+  'assets/images/sample_3.jpg',
+  'assets/images/sample_4.jpg'
 ];
 
 class _InfoPageState extends State<InfoPage> {
@@ -207,7 +207,6 @@ class _InfoPageState extends State<InfoPage> {
             ),
             textAlign: TextAlign.start,
           ),
-          width: 100,
         ),
       ],
     ));
@@ -225,7 +224,8 @@ class _InfoPageState extends State<InfoPage> {
           pagination: SwiperPagination(alignment: Alignment.bottomRight),
           itemCount: imgList.length,
           itemBuilder: (BuildContext context, int index) {
-            return Image.asset(imgList[index]);
+            return SizedBox(
+                width: 100, height: 200, child: Image.asset(imgList[index]));
           },
         ),
       ),
